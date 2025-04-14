@@ -1,0 +1,32 @@
+Lab 4 
+    - 4.1 : tool để quản lý service 
+        - SC   :  
+            •	Quản lý services
+            •	Tạo Service, Escalate quyền
+            •	Persistence
+        - WMIC : 
+            •	Giao diện command WMI toàn hệ thống
+            •	Thực thi lệnh
+            •	Fileless Attack
+
+
+    - 4.2 : Impacket ( phase 3 - 7 , tìm hiểu về tool )
+        - thực hiện các tác vụ lateral movement, credential dumping, remote command execution, v.v...
+            - wmiexec.py  : 
+                - Remote exec (WMI)
+                - WMI
+            - smbexec.py : 
+                - Remote exec (SMB - tạo service)
+                - Cần admin
+            - smbclient.py :
+                - Quản lý file SMB share
+            - lookupsid.py :
+                - Liệt kê SID → User
+
+    - 4.3 : Pass the hash
+        - Dùng hash (LM, NT) để xác thực thay mật khẩu 
+        - Trong win mật khẩu sẽ bị mã hóa thành Hash
+        --> Mục đích lab truy cập và thu thập Hash bằng Psexec
+
+    - 4.4 : 
+        - Chạy được xml thực thi xml 1 file thực thi 

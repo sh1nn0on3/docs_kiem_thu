@@ -1,0 +1,26 @@
+lab 2 :
+    - 2.1 : 
+        - password guessing : burpforce mật khẩu (biết tài khoản) 
+        - password spray : burpforce tài khoản (biết mật khẩu) 
+        - (hydra)
+    - 2.2 :
+        - metasploit : Khai thác lỗ hổng (tạo payload)
+            - Khai thác được , do thám được , phân phối , khai thác , điều khiển
+        - metapreter : nâng cao của metasploit Không tạo file
+    - 2.3 :
+        - sliver : 
+            - khai thác , c2 ( command and control ) , duy trì quyền truy cập 
+    - 2.4 :
+        - empire : 
+            - duy trì quyền truy cập 
+        - UAC :
+            - ngăn chặn phần mềm độc hại
+    - 2.5 : 
+        - payload :
+            -  Msfvenom (metasploit) : tạo payload ( mã thực thi )
+                -> tạo msi --> dùng genisoimage để tạo iso ( để khó phát hiện )
+    - 2.6 :
+        - tool recon 
+            - thu thập thông tin trên window
+
+    --> Khởi động -> trình lắng nghe ( acker nghe victim ) -> chèn payload --> duy trì đăng nhập 

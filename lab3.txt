@@ -1,0 +1,71 @@
+lab 3 : 
+    - 3.1 : 
+        - Windows privilege escalation : 
+            - beroot : Chạy BeRoot = Tự động quét + kiểm tra các cấu hình sai phổ biến (ở phase 5 của cyber kill chain).
+            - PowerUp : giống beroot
+            - lab này flow luồng 
+                - tài khoản noAdmin --> chạy tool --> khai thác được DLL hijacking --> leo lên Admin
+
+    - 3.3 : 
+        - Persistentce (duy trì kết nối khi đã tấn công được) 
+            - Trong lab có 3 dạng chính 
+                - Service Persistentce : Nó chạy mã độc mỗi lần máy khởi động.
+                    - Cắm nó vào 1 service nào đấy thì khi service nó chạy thì mình kết nối được
+                    --> Ưu tiên 1 số service tự động khởi động khi máy được bật lên
+                    ++ Nhược điểm : Dễ bị phát hiện hơn nếu người dùng hoặc admin kiểm tra các dịch vụ đang chạy.
+                - Registry : Viết khóa vào các vị trí registry để mã độc tự động chạy khi user login.
+                    - HKCU : Cho 1 user là user hiện tại ( mỗi user sẽ có 1 HKCU riêng)
+                    - HKLM : Nhiều user và nó cần quyền admin 
+                    --> nếu có quyền admin thì ưu tiên HKLM tại nó quyền toàn cục áp dụng cho tất cả user
+                    ++ Nếu admin hoặc công cụ bảo mật kiểm tra registry, phương pháp này dễ bị phát hiện.
+                - WMI Event Filter Persistence : Đây là kiểu persistence ẩn và khó phát hiện hơn Registry hay Services
+                    - Event Filter:
+                        - Đây là một bộ lọc xác định khi nào sự kiện sẽ được kích hoạt.
+                        --> khi user nó bắt đầu login thì giám sát và lọc sự kiện
+                    - Event Consumer:
+                        - Là hành động sẽ được thực thi khi bộ lọc sự kiện bị kích hoạt. Điều này có thể là việc chạy một chương trình, script, hoặc bất kỳ hành động nào mà attacker muốn thực hiện
+                        --> Tạo 1 đoạn có thể chèn vào trong sự kiện đấy ( như chèn shell ...)
+                    - Binding : 
+                        - Event Filter và Event Consumer được kết nối với nhau để khi sự kiện xảy ra
+                        - ví dụ: khi hệ thống khởi động hoặc người dùng đăng nhập, mã độc sẽ được kích hoạt và thực thi
+                        --> là kết hợp đoạn shell vào event nên khi user hoạt động là bị 
+                    ++ Khó phát hiện tại nó đi chạy ngầm dưới 1 tiến trình khác
+        
+    - 3.4 : ( Attack password)
+        -  msf psexec - hashdumping - mimikatz
+            - psexec : là module trong metasploit cho phép 'Pass-the-Hash'
+                - Mục tiêu là dùng Hash NTLM thay vì bản rõ để login
+                - Remote shell qua SMB (thay đổi user bằng hash)
+            - hashdump :
+                - Trích xuất NTLM hash từ SAM database
+                - Quyền System hoặc Admin
+                - Nhược : không crack được kerberos 
+            - Mimikatz :
+                - Lấy mật khẩu plaintext, NTLM hash, Kerberos tickets, DPAPI secrets
+                - Quyền System hoặc Admin
+
+    - 3.5 : (crack password) 
+        - John the Ripper && Hashcat
+            - John the Ripper :
+                - Hỗ trợ nhiều loại : NTLM, MD5, bcrypt
+                - Chậm xử lý lâu
+            - HashCat : 
+                - yêu cầu người dùng phải chỉ ra “hash type password”.
+
+    - 3.6 : Responder 
+        - kịch bản là victim truy cập vào đường dẫn không tồn tại (Attack sẽ ra nhận đó là tôi ) kết nối được thì nó sẽ tự động gửi hash NTLM của user 
+        --> bay acc
+
+
+    --> Leo thang đặc quyền 
+        - 1 số tool
+    --> Duy trì quyền đăng nhập
+        - 3 cách thức :
+    --> Tấn công và crack password
+        - thông tin user ở SAM DATABASE 
+            - mật khẩu 3 dạng : 
+                - LM hash : 
+                - NTLM hash :
+                    - V1 :
+                    - V2 :
+                - Kerberos : 

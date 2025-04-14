@@ -1,0 +1,23 @@
+
+CYBER KILL CHAIN
+
+1️⃣	Reconnaissance (Trinh sát) :
+	Thu thập thông tin về mục tiêu (IP, domain, email, sơ hở, nhân sự...).
+
+2️⃣	Weaponization (Vũ khí hóa) :
+	Tạo mã độc kết hợp với lỗ hổng (malware + exploit + trojan loader...).
+
+3️⃣	Delivery (Phát tán) :
+	Gửi payload đến mục tiêu (email, USB, link độc, tài liệu đính kèm...).
+
+4️⃣	Exploitation (Khai thác) :
+	Kích hoạt payload, khai thác lỗ hổng (trình duyệt, phần mềm, macro...).
+
+5️⃣	Installation (Cài đặt) :
+	Cài mã độc vào hệ thống (backdoor, RAT, rootkit...).
+
+6️⃣	Command & Control (C2) :
+	Thiết lập kết nối giữa attacker và hệ thống đã bị kiểm soát.
+
+7️⃣	Actions on Objectives :
+	Thực hiện mục tiêu cuối (trộm dữ liệu, phá hoại, lateral movement...).
