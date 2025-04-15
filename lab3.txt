@@ -16,6 +16,7 @@ lab 3 :
                 - Registry : Viết khóa vào các vị trí registry để mã độc tự động chạy khi user login.
                     - HKCU : Cho 1 user là user hiện tại ( mỗi user sẽ có 1 HKCU riêng)
                     - HKLM : Nhiều user và nó cần quyền admin 
+                    - 
                     --> nếu có quyền admin thì ưu tiên HKLM tại nó quyền toàn cục áp dụng cho tất cả user
                     ++ Nếu admin hoặc công cụ bảo mật kiểm tra registry, phương pháp này dễ bị phát hiện.
                 - WMI Event Filter Persistence : Đây là kiểu persistence ẩn và khó phát hiện hơn Registry hay Services
@@ -51,6 +52,14 @@ lab 3 :
                 - Chậm xử lý lâu
             - HashCat : 
                 - yêu cầu người dùng phải chỉ ra “hash type password”.
+                - Các option :
+                    - a : attack mode
+                    - m : loại hash
+                        - 0 : MD5 
+                        - 1000 : NTLM 
+                    - o : lưu vào file
+                - hashcat -m 1000 -a 0 hashes.txt rockyou.txt
+
 
     - 3.6 : Responder 
         - kịch bản là victim truy cập vào đường dẫn không tồn tại (Attack sẽ ra nhận đó là tôi ) kết nối được thì nó sẽ tự động gửi hash NTLM của user 

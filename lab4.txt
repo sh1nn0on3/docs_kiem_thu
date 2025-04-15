@@ -12,6 +12,7 @@ Lab 4
 
     - 4.2 : Impacket ( phase 3 - 7 , tìm hiểu về tool )
         - thực hiện các tác vụ lateral movement, credential dumping, remote command execution, v.v...
+        - bộ công cụ để khai thác 
             - wmiexec.py  : 
                 - Remote exec (WMI)
                 - WMI
@@ -30,3 +31,4 @@ Lab 4
 
     - 4.4 : 
         - Chạy được xml thực thi xml 1 file thực thi 
+        - là tool cho phép chạy code C# trên bộ nhớ không cần in ra file, antivirus sẽ xóa 

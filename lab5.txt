@@ -1,0 +1,28 @@
+lab 5
+    - Tổng quan 3 thành phần : 
+        - client
+        - service
+        - KDC ( AS , TGS )
+    
+    - SPN :
+        - một định danh duy nhất cho một dịch vụ trong môi trường AD.
+        - 
+    - GetUserSPNs 
+        - quét service xem có những user có SPN trong đấy
+    
+    - Làm sao biết được vé TGS được mã hóa dạng nào 
+        - GetUserSPNs.py domain/username:password -dc-ip x.x.x.x
+        - $krb5tgs$23$*http/webserver.domain.com*$domain.local$...
+            - 23 : RC4      - hashcat -m 13100
+            - 17 : AES128   - hashcat -m 19600
+            - 18 : AES256   - hashcat -m 19700
+
+    - 5.1 : Kerberoast
+        - Mục tiêu lấy hash service account
+        - Lợi dụng Kerberos → Request TGS ticket → Dump hash → Crack → Lấy mật khẩu của service account.
+
+
+    - 5.2 : DomainDominance
+        - Domain Dominance là trạng thái attacker đã kiểm soát hoàn toàn AD domain
+
+        ntds.bit

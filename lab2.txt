@@ -4,15 +4,16 @@ lab 2 :
         - password spray : burpforce tài khoản (biết mật khẩu) 
         - (hydra)
     - 2.2 :
-        - metasploit : Khai thác lỗ hổng (tạo payload)
-            - Khai thác được , do thám được , phân phối , khai thác , điều khiển
-        - metapreter : nâng cao của metasploit Không tạo file
+        - metasploit : 
+            - thiên về khai thác recon chèn payload
+        - metapreter :
+            -  một shell tương tác nâng cao ( trong metasploit )
     - 2.3 :
         - sliver : 
             - khai thác , c2 ( command and control ) , duy trì quyền truy cập 
     - 2.4 :
         - empire : 
-            - duy trì quyền truy cập 
+            - khai thác , c2 ( command and control ) , duy trì quyền truy cập 
         - UAC :
             - ngăn chặn phần mềm độc hại
     - 2.5 : 
@@ -21,6 +22,9 @@ lab 2 :
                 -> tạo msi --> dùng genisoimage để tạo iso ( để khó phát hiện )
     - 2.6 :
         - tool recon 
-            - thu thập thông tin trên window
+            - thu thập thông tin trên window và trên AD ( có nhiều option )
 
     --> Khởi động -> trình lắng nghe ( acker nghe victim ) -> chèn payload --> duy trì đăng nhập 
+
+
+    -A -F
