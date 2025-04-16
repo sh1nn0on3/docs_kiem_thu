@@ -4,6 +4,8 @@ Lab 4
             •	Quản lý services
             •	Tạo Service, Escalate quyền
             •	Persistence
+            ex : sc create "UpdaterService" binPath= "C:\Temp\rev_shell.exe
+    
         - WMIC : 
             •	Giao diện command WMI toàn hệ thống
             •	Thực thi lệnh

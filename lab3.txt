@@ -15,8 +15,7 @@ lab 3 :
                     ++ Nhược điểm : Dễ bị phát hiện hơn nếu người dùng hoặc admin kiểm tra các dịch vụ đang chạy.
                 - Registry : Viết khóa vào các vị trí registry để mã độc tự động chạy khi user login.
                     - HKCU : Cho 1 user là user hiện tại ( mỗi user sẽ có 1 HKCU riêng)
-                    - HKLM : Nhiều user và nó cần quyền admin 
-                    - 
+                    - HKLM : toàn bộ hệ thống ( cần quyền admin )
                     --> nếu có quyền admin thì ưu tiên HKLM tại nó quyền toàn cục áp dụng cho tất cả user
                     ++ Nếu admin hoặc công cụ bảo mật kiểm tra registry, phương pháp này dễ bị phát hiện.
                 - WMI Event Filter Persistence : Đây là kiểu persistence ẩn và khó phát hiện hơn Registry hay Services
@@ -35,14 +34,16 @@ lab 3 :
     - 3.4 : ( Attack password)
         -  msf psexec - hashdumping - mimikatz
             - psexec : là module trong metasploit cho phép 'Pass-the-Hash'
-                - Mục tiêu là dùng Hash NTLM thay vì bản rõ để login
-                - Remote shell qua SMB (thay đổi user bằng hash)
+                - Remote command execution trên hệ thống Windows
+                - Installation / Lateral Movement ( phase 5 , 6)
+                - Cần quyền Admin
             - hashdump :
                 - Trích xuất NTLM hash từ SAM database
+                - Action on Objectives
                 - Quyền System hoặc Admin
-                - Nhược : không crack được kerberos 
             - Mimikatz :
                 - Lấy mật khẩu plaintext, NTLM hash, Kerberos tickets, DPAPI secrets
+                - Action on Objectives
                 - Quyền System hoặc Admin
 
     - 3.5 : (crack password) 

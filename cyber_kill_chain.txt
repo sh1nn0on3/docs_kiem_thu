@@ -5,7 +5,7 @@ CYBER KILL CHAIN
 	Thu thập thông tin về mục tiêu (IP, domain, email, sơ hở, nhân sự...).
 
 2️⃣	Weaponization (Vũ khí hóa) :
-	Tạo mã độc kết hợp với lỗ hổng (malware + exploit + trojan loader...).
+	Tạo payload, nhúng vào file mồi (malware + exploit + trojan loader...).
 
 3️⃣	Delivery (Phát tán) :
 	Gửi payload đến mục tiêu (email, USB, link độc, tài liệu đính kèm...).
